@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Pixel Defense</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- MAIN MENU -->
+  <section id="screen-menu" class="screen active">
+    <div class="menu-box">
+      <h1 class="game-title">PIXEL<br>DEFENSE</h1>
+      <div class="menu-buttons">
+        <button id="btn-play" class="btn btn-primary btn-big">▶ Spielen</button>
+        <button id="btn-howto" class="btn btn-secondary">? Anleitung</button>
+        <button id="btn-reset" class="btn btn-danger-outline">Fortschritt löschen</button>
+      </div>
+      <p class="menu-footer">Tippe zum Platzieren von Türmen</p>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section id="screen-howto" class="screen">
+    <div class="panel-box">
+      <h2>Anleitung</h2>
+      <ul class="howto-list">
+        <li>Gegner laufen den Pfad entlang zur Burg.</li>
+        <li>Tippe unten auf einen Turm, dann auf ein freies Feld, um ihn zu bauen.</li>
+        <li>Tippe auf einen gebauten Turm, um ihn zu upgraden oder zu verkaufen.</li>
+        <li>Drücke "Welle starten", um die nächste Gegnerwelle zu schicken.</li>
+        <li>Verliere keine 20 Leben, sonst ist das Spiel vorbei!</li>
+      </ul>
+      <button id="btn-howto-back" class="btn btn-primary">Zurück</button>
+    </div>
+  </section>
+
+  <!-- LEVEL SELECT -->
+  <section id="screen-levels" class="screen">
+    <div class="panel-box">
+      <h2>Levelauswahl</h2>
+      <div id="level-grid" class="level-grid"></div>
+      <button id="btn-levels-back" class="btn btn-secondary">Zurück</button>
+    </div>
+  </section>
+
+  <!-- GAME SCREEN -->
+  <section id="screen-game" class="screen">
+    <div id="hud">
+      <div class="hud-item" id="hud-lives">❤ <span>20</span></div>
+      <div class="hud-item" id="hud-gold">🪙 <span>100</span></div>
+      <div class="hud-item" id="hud-wave">Welle <span>0/10</span></div>
+      <div class="hud-spacer"></div>
+      <button id="btn-speed" class="hud-btn">x2</button>
+      <button id="btn-pause" class="hud-btn">⏸</button>
+    </div>
+
+    <div id="canvas-wrap">
+      <canvas id="game-canvas"></canvas>
+    </div>
+
+    <div id="bottom-panel">
+      <div id="tower-buttons"></div>
+      <button id="btn-start-wave" class="btn btn-primary btn-wave">Welle starten</button>
+    </div>
+  </section>
+
+  <!-- RESULT SCREEN -->
+  <section id="screen-result" class="screen">
+    <div class="panel-box">
+      <h2 id="result-title">Sieg!</h2>
+      <div id="result-stars" class="result-stars">★★★</div>
+      <p id="result-stats"></p>
+      <div class="result-buttons">
+        <button id="btn-retry" class="btn btn-secondary">Wiederholen</button>
+        <button id="btn-next" class="btn btn-primary">Nächstes Level</button>
+        <button id="btn-result-levels" class="btn btn-secondary">Levelauswahl</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOWER INFO / UPGRADE MODAL -->
+  <div id="tower-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="tm-name">Turm</h3>
+      <div id="tm-stats" class="tm-stats"></div>
+      <div class="modal-buttons">
+        <button id="tm-upgrade" class="btn btn-primary">Upgrade</button>
+        <button id="tm-sell" class="btn btn-danger-outline">Verkaufen</button>
+        <button id="tm-close" class="btn btn-secondary">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAUSE OVERLAY -->
+  <div id="pause-overlay" class="modal hidden">
+    <div class="modal-content">
+      <h3>Pause</h3>
+      <div class="modal-buttons">
+        <button id="btn-resume" class="btn btn-primary">Fortsetzen</button>
+        <button id="btn-quit" class="btn btn-secondary">Level verlassen</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/towerData.js"></script>
+<script src="js/enemyData.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
